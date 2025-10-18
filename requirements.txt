@@ -2,3 +2,4 @@ joblib
 numpy
 pandas
 LinearRegression
+scikit-learn
