@@ -1,4 +1,5 @@
 import pandas as pd
+from sklearn.linear_model import LinearRegression
 import joblib
 
 # Dummy dataset
@@ -32,5 +33,6 @@ if st.button("Predict Price"):
  prediction = model.predict(features)
 
  st.success(f"Estimated House Price: ${prediction[0]:,.2f}")
+
 
 
