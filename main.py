@@ -1,6 +1,4 @@
-import pandas as pd
-from sklearn.linear_model import LinearRegression
-from sklearn.model_selection import train_test_split
+
 import joblib
 
 # Dummy dataset
@@ -19,7 +17,7 @@ model.fit(X, y)
 joblib.dump(model, 'model.pkl')
 
 import streamlit as st
-import joblib
+
 import numpy as np
 # Load model
 model = joblib.load("model.pkl")
@@ -32,4 +30,5 @@ age = st.number_input("Age of House (years)", value=10)
 if st.button("Predict Price"):
  features = np.array([[area, bedrooms, age]])
  prediction = model.predict(features)
+
  st.success(f"Estimated House Price: ${prediction[0]:,.2f}")
