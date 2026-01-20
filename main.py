@@ -16,6 +16,7 @@ X = df[['area', 'bedrooms', 'age']]
 y = df['price']
 model = LinearRegression()
 model.fit(X, y)
+
 # Save model
 joblib.dump(model, 'model.pkl')
 
@@ -26,6 +27,7 @@ import numpy as np
 model = joblib.load("model.pkl")
 st.title(" House Price Prediction App")
 st.write("Enter house details to predict the price:")
+
 # Inputs
 area = st.number_input("Area (sq ft)", value=1000)
 bedrooms = st.number_input("Number of Bedrooms", value=2, step=1)
@@ -35,3 +37,4 @@ if st.button("Predict Price"):
  prediction = model.predict(features)
 
  st.success(f"Estimated House Price: ${prediction[0]:,.2f}")
+
