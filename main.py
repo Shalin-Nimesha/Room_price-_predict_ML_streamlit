@@ -23,6 +23,8 @@ joblib.dump(model, 'model.pkl')
 import streamlit as st
 
 import numpy as np
+
+
 # Load model
 model = joblib.load("model.pkl")
 st.title(" House Price Prediction App")
@@ -37,4 +39,5 @@ if st.button("Predict Price"):
  prediction = model.predict(features)
 
  st.success(f"Estimated House Price: ${prediction[0]:,.2f}")
+
 
