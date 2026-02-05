@@ -17,6 +17,9 @@ model.fit(X, y)
 
 
 
+
+
+
 # Save model
 joblib.dump(model, 'model.pkl')
 
@@ -38,4 +41,5 @@ if st.button("Predict Price"):
  prediction = model.predict(features)
 
  st.success(f"Estimated House Price: ${prediction[0]:,.2f}")
+
 
